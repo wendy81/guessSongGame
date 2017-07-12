@@ -1,0 +1,54 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.pull-left {
+	float:left;
+}
+.img-height-show {
+  height:200px;
+  overflow:hidden;
+}
+.name {
+	text-align:center;
+	height:30px;
+	line-height:30px;
+	font-size:0.75em;
+}
+
+.view-block {
+  display:block;
+  overflow:hidden;
+  padding-left:10px;
+  padding-right:10px;
+  border-bottom:#eee 1px solid;
+  color:#666;
+  font-size:0.75em;
+  height:40px;
+  line-height:40px;
+}
+.view-block .ico-music {
+  color:#ccc;
+}
+.view-block .music-name {
+  width:90%;
+  overflow:hidden;
+}

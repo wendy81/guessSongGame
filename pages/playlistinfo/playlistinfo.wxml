@@ -1,0 +1,35 @@
+<!--index.wxml-->
+<view class="container">
+
+<scroll-view scroll-y scroll-with-animation="false" scroll-top="{{scrollTop}}" lower-threshold="50" style="height: {{winHeight - 60}}px;">
+
+	<view wx:for="{{playlist ? playlist: occupy}}" wx:key="{{item.name}}" class="playlist-img">
+		<view class="pull-left img-height-show" data-href="{{item.href}}" catchtap="clickPlay">
+          <!--判断图片已加载显示图片,没有加载则显示默认图片-->
+          <image wx:key="id" id="{{item._id}}"  src="{{ item.url ? item.url : '../../images/default.gif'}}" class="slide-image pos playlist-img" data-index="{{index}}" bindload="imagebindload"  binderror="imageError" style="width:{{winWidth}}px;height:{{imageWinHeight}}px"/>
+      	</view>
+	</view>
+
+	<view wx:for="{{tracks}}" wx:key="{{item.track.name}}">
+		<view class="view-block" data-index = "{{index}}" catchtap="musicClickEvent">
+	    	<text class="fa fa-music pull-left ico-music"></text>
+			<view class="pull-left music-name {{item.track.active}}">{{item.musicName}}</view>
+		</view>
+	</view>
+
+</scroll-view>
+
+<view class="play-album" style="width:{{winWidth - 20}}px;">
+    <audio poster="{{poster}}" name="{{name}}" author="{{author}}" src="{{audiosrc}}" data-index="{{index}}" id="myAudio" bindended="audioEndedEvent"></audio>
+    <view animation="{{animationData}}" class="album-img pull-left">
+    	<image  mode="widthFix" src="{{ albumImg ? albumImg : '../../images/default.gif'}}"  data-index="{{index}}" bindload="imagebindload"  binderror="imageError" style="width:50px;" />
+    </view>
+
+    <view class="pull-left" style="height:50px;line-height:50px;font-size:.75em; padding-left:4px;">
+    	<view style="height:16px;"> {{musicName}} </view>
+    	<view style="height:16px;color:#666; font-size:.7em"> {{musicArtist}} </view>
+    </view>
+    <text class="fa {{playBtnCss}} play-btn pull-right"  bindtap="{{playBtnEvent}}"></text>
+</view>
+
+</view>

@@ -1,0 +1,83 @@
+/**index.wxss**/
+.container {
+  padding:0;
+  margin:0;
+}
+.playlist-img {
+  filter: alpha(opacity=90);
+  opacity: .9;
+  padding:0;
+  margin:0;
+}
+.img-height-show {
+  height:200px;
+  overflow:hidden;
+}
+.name {
+	text-align:center;
+	height:30px;
+	line-height:30px;
+	font-size:0.75em;
+}
+
+.view-block {
+  display:block;
+  overflow:hidden;
+  padding-left:10px;
+  padding-right:10px;
+  border-bottom:#eee 1px solid;
+  color:#666;
+  font-size:0.75em;
+  height:40px;
+  line-height:40px;
+}
+.view-block .ico-music {
+  color:#ccc;
+}
+.view-block .music-name {
+  width:90%;
+  overflow:hidden;
+}
+
+/**audio operate btn**/
+.playlist-img {
+  overflow:auto;
+}
+.play-album {
+   position:absolute;
+   left:0;
+   bottom:0;
+   padding-left:15px;
+   padding-right:15px;
+   height: 60px; 
+   line-height: 60px;
+   border-top:#eee 1px solid;
+   z-index:999;
+}
+.play-btn {
+  z-index:100;
+  color:#000;
+  filter: alpha(opacity=75);
+  opacity: .75;
+  width:50px;
+  text-align:center;
+}
+.album-img {
+  border-radius:50%;
+  width:50px; 
+  height:50px;
+  line-height:50px;
+  margin-top:5px;
+  overflow:hidden;
+  filter: alpha(opacity=85);
+  opacity: .85;
+  border:#eee 1px solid;
+}
+.musicActive {
+  color:rgb(68, 206, 236);
+}
+audio {
+  position:absolute;
+  left:-300px;
+  top:0;  
+}

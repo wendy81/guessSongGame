@@ -1,0 +1,12 @@
+<!--index.wxml-->
+<view class="container">
+<scroll-view scroll-y scroll-with-animation="false" lower-threshold="50" style="height: {{winHeight}}px;">
+	<view wx:for="{{datas ? datas: occupy}}" wx:key="{{item._id}}">
+		<view class="pull-left" data-href="{{item.href}}" catchtap="clickPlay">
+          <!--判断图片已加载显示图片,没有加载则显示默认图片-->
+          <image wx:key="id" id="{{item._id}}"  src="{{ item.images[0].url ? item.images[0].url : '../../images/default.gif'}}" class="slide-image pos" data-index="{{index}}" bindload="imagebindload"  binderror="imageError" style="width:{{imageWidth}}px;height:{{imageheight}}px"/>
+          <view class="name">{{item.name}}</view>
+      	</view>
+	</view>
+</scroll-view>
+</view>

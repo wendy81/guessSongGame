@@ -1,0 +1,20 @@
+<!--index.wxml-->
+<view class="container">
+<scroll-view scroll-y scroll-with-animation="false" lower-threshold="50" style="height: {{winHeight}}px;">
+	<view wx:for="{{playlist ? playlist: occupy}}" wx:key="{{item.name}}">
+		<view class="pull-left img-height-show" data-href="{{item.href}}" catchtap="clickPlay">
+          <!--判断图片已加载显示图片,没有加载则显示默认图片-->
+          <image wx:key="id" id="{{item._id}}"  src="{{ item.url ? item.url : '../../images/default.gif'}}" class="slide-image pos" data-index="{{index}}" bindload="imagebindload"  binderror="imageError" style="width:{{imageWinWindth}}px;height:{{imageWinHeight}}px"/>
+      	</view>
+	</view>
+
+	<view wx:for="{{tracks}}" wx:key="{{item.track.name}}">
+		<view class="view-block">
+	    	<text class="fa fa-music pull-left ico-music"></text>
+			<view class="pull-left music-name">{{item.track.name}}</view>
+			<audio poster="{{poster}}" name="{{name}}" author="{{author}}" src="{{item.track.preview_url}}" data-index="{{index}}" loop></audio>
+		</view>
+	</view>
+
+</scroll-view>
+</view>
